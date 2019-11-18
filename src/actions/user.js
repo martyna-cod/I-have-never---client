@@ -1,5 +1,6 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4000";
+// const baseUrl = "http://localhost:4000";
+const baseUrl = "https://evening-scrubland-81754.herokuapp.com";
 
 export const JWT = "JWT";
 export const NEW_USER = "NEW_USER";
