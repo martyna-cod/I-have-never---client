@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 import { connect } from "react-redux";
-import { login } from "../actions/user";
+import { createUser } from "../actions/user";
 
-class LoginFormContainer extends Component {
+class SignupFormContainer extends Component {
   state = { userName: "", password: "" };
 
   onChange = event => {
@@ -12,13 +12,16 @@ class LoginFormContainer extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    this.props.login(this.state.userName, this.state.password);
+    this.props.createUser({
+      userName: this.state.userName,
+      password: this.state.password
+    });
   };
 
   render() {
     return (
       <div>
-        <LoginForm
+        <SignupForm
           onChange={this.onChange}
           onSubmit={this.onSubmit}
           values={this.state}
@@ -28,4 +31,4 @@ class LoginFormContainer extends Component {
   }
 }
 
-export default connect(null, { login })(LoginFormContainer);
+export default connect(null, { createUser })(SignupFormContainer);

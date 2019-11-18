@@ -8,7 +8,7 @@ export default function LoginForm(props) {
         type="text"
         name="userName"
         placeholder="userName"
-        value={props.values.userName}
+        value={props.values.email}
         onChange={props.onChange}
       />
       <label>Password:</label>
@@ -19,7 +19,7 @@ export default function LoginForm(props) {
         value={props.values.password}
         onChange={props.onChange}
       />
-      <button type="Submit">LOGIN</button>
+      <button type="Submit">SIGN UPPPPP</button>
     </form>
   );
 }
