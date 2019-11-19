@@ -1,6 +1,6 @@
 import request from "superagent";
-//const baseUrl = "http://localhost:4000";
-const baseUrl = "https://evening-scrubland-81754.herokuapp.com";
+const baseUrl = "http://localhost:4000";
+// const baseUrl = "https://evening-scrubland-81754.herokuapp.com";
 
 export const JWT = "JWT";
 export const NEW_USER = "NEW_USER";
@@ -34,7 +34,7 @@ export const createUser = data => (dispatch, getState) => {
   //   const { user } = state; // const user = state.user
 
   request
-    .post(`${baseUrl}/signup`)
+    .post(`${baseUrl}/user`)
     .send(data)
     .then(res => {
       const action = newUser(res.body);

@@ -1,11 +1,10 @@
-import { JWT, NEW_USER } from "../actions/user";
-
 export default function reducer(state = [], action = {}) {
   switch (action.type) {
-    case JWT:
+    case "ROOMS":
       return action.payload;
-    case NEW_USER:
-      return [action.payload, ...state];
+    case "ROOM":
+      return [...state, action.payload];
+
     default:
       return state;
   }

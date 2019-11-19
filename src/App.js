@@ -1,18 +1,62 @@
-import React, { Component } from "react";
-import store from "./store";
-import { Provider } from "react-redux";
+import React, { Component, Fragment } from "react";
+import { connect } from "react-redux";
+import { Route } from "react-router-dom";
 import LoginFormContainer from "./components/LoginFormContainer";
 import SignupFormContainer from "./components/SignupFormContainer";
+import Room from "./components/Room";
+import Rooms from "./components/Rooms";
+// import { login } from "./actions/user";
+// import QuestionsForm from "./components/QuestionsForm";
+import { Link } from "react-router-dom";
 
 class App extends Component {
+  stream = new EventSource("http://localhost:4000/stream");
+  state = {
+    rooms: []
+  };
+  componentDidMount() {
+    this.stream.onmessage = event => {
+      console.log(event);
+      const { data } = event; // const data = event.data
+
+      const parsed = JSON.parse(data);
+      console.log("parsed tested", parsed);
+      this.props.dispatch(parsed);
+    };
+  }
+
   render() {
     return (
-      <Provider store={store}>
-        <LoginFormContainer />
-        <SignupFormContainer />
-      </Provider>
+      <Fragment>
+        <Route exact path="/rooms" component={Rooms} />
+        <Route path="/room/:name" component={Room} />
+        {/* <Route exact  component={QuestionsForm} /> */}
+        <Route exact path="/" component={LoginFormContainer} />
+        <Route exact path="/" component={SignupFormContainer} />
+        <Route
+          exact
+          path="/"
+          component={() => <Link to={"/rooms"}>Rooms</Link>}
+        />
+      </Fragment>
     );
   }
 }
 
-export default App;
+// {this.state.rooms.map((room)=> { return <p key={room.id}>{room.roomName}<p/>})}
+
+export default connect()(App);
+
+// {/* if(){
+//   <LoginFormContainer />
+//   <SignupFormContainer />
+// }
+// else{ */}
+// // <Route exact path="/" component={Rooms} />
+// // <Route path="/room/:name" component={Room} />
+// {/* } */}
+
+// this.props.dispatch({
+//   type: "ROOMS",
+//   payload: rooms
+// });
