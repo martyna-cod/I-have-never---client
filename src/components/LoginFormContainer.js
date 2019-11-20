@@ -6,6 +6,11 @@ import { login } from "../actions/user";
 class LoginFormContainer extends Component {
   state = { userName: "", password: "" };
 
+  componentDidUpdate() {
+    if(this.props.user.length !== 0){
+this.props.history.push("/rooms")
+    }
+  }
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -28,4 +33,8 @@ class LoginFormContainer extends Component {
   }
 }
 
-export default connect(null, { login })(LoginFormContainer);
+const mapStateToProps= state =>({
+  user: state.user
+})
+
+export default connect(mapStateToProps, { login })(LoginFormContainer);

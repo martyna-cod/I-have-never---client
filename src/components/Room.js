@@ -46,7 +46,7 @@ class Room extends Component {
 function mapStateToProps(state) {
   return {
     jwt: state.user,
-    rooms: state.room
+    rooms: state.rooms
   };
 }
 

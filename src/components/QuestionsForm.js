@@ -5,55 +5,47 @@ export default class QuestionsForm extends Component {
     questions: [],
     value: ""
   };
-  componentDidMount() {}
 
-  onChange = (event, number) => {
-    const { value } = event.target;
-    this.setState({ [number]: value });
-  };
-
-  onSubmit = event => {
-    event.preventDefault();
-  };
   render() {
+    const { questionsValues, onChangeQuestion } = this.props;
     return (
       <div>
-        <form onSubmit={this.props.onSubmit}>
+        <form onSubmit={this.onSubmit}>
           <label>Questions:</label>
           <label> 1: </label>
           <input
             type="text"
             name="Quesions"
-            value={this.props.values.questions}
-            onChange={event => this.props.onChange(event, 1)}
+            value={questionsValues["q1"]}
+            onChange={event => onChangeQuestion(event, "q1")}
           />
           <label> 2: </label>
           <input
             type="text"
             name="Quesions"
-            value={this.props.values.questions}
-            onChange={event => this.props.onChange(event, 2)}
+            value={questionsValues["q2"]}
+            onChange={event => onChangeQuestion(event, "q2")}
           />
           <label> 3: </label>
           <input
             type="text"
             name="Quesions"
-            value={this.props.values.questions}
-            onChange={event => this.props.onChange(event, 3)}
+            value={questionsValues["q3"]}
+            onChange={event => onChangeQuestion(event, "q3")}
           />
           <label> 4: </label>
           <input
             type="text"
             name="Quesions"
-            value={this.props.values.questions}
-            onChange={event => this.props.onChange(event, 4)}
+            value={questionsValues["q4"]}
+            onChange={event => onChangeQuestion(event, "q4")}
           />
           <label> 5: </label>
           <input
             type="text"
             name="Quesions"
-            value={this.props.values.questions}
-            onChange={event => this.props.onChange(event, 5)}
+            value={questionsValues["q5"]}
+            onChange={event => onChangeQuestion(event, "q5")}
           />
 
           <button type="Submit">Submit</button>

@@ -3,8 +3,7 @@ export default function reducer(state = [], action = {}) {
     case "ROOMS":
       return action.payload;
     case "ROOM":
-      return [...state, action.payload];
-
+      return [action.payload];
     default:
       return state;
   }

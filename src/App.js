@@ -4,10 +4,12 @@ import { Route } from "react-router-dom";
 import LoginFormContainer from "./components/LoginFormContainer";
 import SignupFormContainer from "./components/SignupFormContainer";
 import Room from "./components/Room";
-import Rooms from "./components/Rooms";
+import RoomsList from "./components/RoomsList";
+//import QuestionsForm from "./components/QuestionsForm";
+import CreateRoomAndQuestions from "./components/CreateRoomAndQuestions";
 // import { login } from "./actions/user";
 // import QuestionsForm from "./components/QuestionsForm";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class App extends Component {
   stream = new EventSource("http://localhost:4000/stream");
@@ -28,16 +30,17 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Route exact path="/rooms" component={Rooms} />
+        <Route exact path="/rooms" component={RoomsList} />
+        <Route path="/question" component={CreateRoomAndQuestions}/>
         <Route path="/room/:name" component={Room} />
         {/* <Route exact  component={QuestionsForm} /> */}
         <Route exact path="/" component={LoginFormContainer} />
         <Route exact path="/" component={SignupFormContainer} />
-        <Route
+        {/* <Route
           exact
           path="/"
           component={() => <Link to={"/rooms"}>Rooms</Link>}
-        />
+        /> */}
       </Fragment>
     );
   }
