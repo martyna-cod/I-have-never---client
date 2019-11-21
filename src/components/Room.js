@@ -13,8 +13,24 @@ class Room extends Component {
       .set({ authorization: `Bearer ${jwt}` });
     console.log(response, "response test");
   };
+  // onClick= ()=>{
+  //   if(user.userName ===  i have){
+  //     return window.alert(`${userName} needs to drink`)
+  //   }
+  // }
 
   render() {
+    // const { questions } = this.props;
+    // //console.log("this.props test:", this.props);
+    // if (!questions) {
+    //   return null;
+    // }
+
+    // //console.log("rooms test:", rooms);
+    // const listQuestion = questions.map(question => (
+    //   <p key={question}>{question}</p>
+    // ));
+
     const { name } = this.props.match.params;
     const { rooms } = this.props;
     console.log("test rooms", rooms);
@@ -24,6 +40,19 @@ class Room extends Component {
       return "this room does not exist";
     }
     const { users } = room;
+    const { questions } = room;
+
+    console.log("questions test:", questions);
+
+    const listQuestion =
+      questions && questions.length ? (
+        questions.map(question => (
+          <p key={question.question}> {question.question}</p>
+        ))
+      ) : (
+        <p> no questions in this room</p>
+      );
+
     const list =
       users && users.length ? (
         users.map(user => <p key={user.userName}> {user.userName}</p>)
@@ -31,15 +60,29 @@ class Room extends Component {
         <p> no users in this room</p>
       );
 
+    // const { questions } = this.props;
+    // //console.log("this.props test:", this.props);
+    // if (!questions) {
+    //   return null;
+    // }
+
+    // //console.log("rooms test:", rooms);
+    // const listQuestion = questions.map(question => (
+    //   <p key={question}>{question}</p>
+    // ));
+
     console.log("room test", room);
     console.log(name, "test");
     return (
       <div>
         <h1>{name}</h1>
+
         <button>I HAVE</button>
         <button>I HAVE NOT</button>
         <button onClick={this.onClick}>JOIN</button>
+
         {list}
+        {listQuestion}
       </div>
     );
   }
@@ -48,6 +91,7 @@ function mapStateToProps(state) {
   return {
     jwt: state.user,
     rooms: state.rooms
+    // questions: state.rooms.                                                            room.questions
   };
 }
 

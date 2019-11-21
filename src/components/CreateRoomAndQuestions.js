@@ -11,7 +11,7 @@ class CreateRoomAndQuestions extends Component {
   }
   state = {
     roomName: "",
-    questions: {
+     questions: {
       q1: "",
       q2: "",
       q3: "",
@@ -89,7 +89,8 @@ class CreateRoomAndQuestions extends Component {
 
 function mapStateToProps(state) {
   return {
-    jwt: state.user
+    jwt: state.user,
+    questions: state.question
     // user: state.user
     // value: state.value
   };
