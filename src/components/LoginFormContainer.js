@@ -7,8 +7,8 @@ class LoginFormContainer extends Component {
   state = { userName: "", password: "" };
 
   componentDidUpdate() {
-    if(this.props.user.length !== 0){
-this.props.history.push("/rooms")
+    if (this.props.user.length !== 0) {
+      this.props.history.push("/rooms"); //  => try to understand...
     }
   }
   onChange = event => {
@@ -33,8 +33,8 @@ this.props.history.push("/rooms")
   }
 }
 
-const mapStateToProps= state =>({
+const mapStateToProps = state => ({
   user: state.user
-})
+});
 
 export default connect(mapStateToProps, { login })(LoginFormContainer);

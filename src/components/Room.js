@@ -30,6 +30,7 @@ class Room extends Component {
       ) : (
         <p> no users in this room</p>
       );
+
     console.log("room test", room);
     console.log(name, "test");
     return (

@@ -3,7 +3,6 @@ const baseUrl = "http://localhost:4000";
 // const baseUrl = "https://evening-scrubland-81754.herokuapp.com";
 
 export const JWT = "JWT";
-export const NEW_USER = "NEW_USER";
 
 function jwt(payload) {
   return {
@@ -12,7 +11,7 @@ function jwt(payload) {
   };
 }
 
-export const login = (userName, password) => dispatch => {
+export const login = (userName, password) => dispatch => {    //what's going on on this line??????? 
   request
     .post(`${baseUrl}/login`)
     .send({ userName, password })
@@ -22,14 +21,7 @@ export const login = (userName, password) => dispatch => {
     });
 };
 
-function newUser(payload) {
-  return {
-    type: NEW_USER,
-    payload
-  };
-}
-
-export const createUser = data => (dispatch, getState) => {
+export const createUser = data => (dispatch, getState) => {   //what's going on on this line???????
   //   const state = getState();
   //   const { user } = state; // const user = state.user
 
@@ -37,8 +29,7 @@ export const createUser = data => (dispatch, getState) => {
     .post(`${baseUrl}/user`)
     .send(data)
     .then(res => {
-      const action = newUser(res.body);
-      dispatch(action);
+      console.log(res.body);        // => you can delete this line it's not very important
     })
     .catch(console.error);
 };

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import QuestionsForm from "./QuestionsForm";
+import Questions from "./Questions";
 import superagent from "superagent";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class CreateRoomAndQuestions extends Component {
   constructor() {
@@ -34,6 +35,16 @@ class CreateRoomAndQuestions extends Component {
     });
     console.log(this.state.questions, "where???");
   }
+  // onSubmitQuestion = event => {
+  //   event.preventDefault();
+  //   const questions = this.state.questions;
+
+  //   const postUrl = `${this.url}/question`;
+  //   superagent
+  //     .post(postUrl)
+  //     .send({ questions })
+  //     .then(res => console.log({ responseQUESTIONSSSSSSSS: res }));
+  // };
 
   onSubmit = event => {
     console.log(this.state.roomName);
@@ -44,7 +55,8 @@ class CreateRoomAndQuestions extends Component {
     console.log({ postUrl, roomName });
     superagent
       .post(postUrl)
-      .send({ roomName, questions })
+      .set({ authorization: `Bearer ${this.props.jwt}` })
+      .send({ roomName, questions }) //
       .then(res => {
         console.log(res, "res test");
       });
@@ -62,12 +74,14 @@ class CreateRoomAndQuestions extends Component {
             value={this.state.roomName}
             onChange={this.onChange}
           />
-          <button type="Submit">Submit</button>
+          <Questions
+            questionsValues={this.state.questions}
+            onChangeQuestion={this.onChangeQuestion}
+            // onSubmitQuestion={this.onSubmitQuestion}
+          />
+          <button>Submit</button>
         </form>
-        <QuestionsForm
-          questionsValues={this.state.questions}
-          onChangeQuestion={this.onChangeQuestion}
-        />
+        <Link to="/rooms">Rooms</Link>
       </div>
     );
   }
@@ -75,7 +89,8 @@ class CreateRoomAndQuestions extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    jwt: state.user
+    // user: state.user
     // value: state.value
   };
 }
