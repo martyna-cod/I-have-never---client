@@ -13,11 +13,19 @@ class Room extends Component {
       .set({ authorization: `Bearer ${jwt}` });
     console.log(response, "response test");
   };
-  // onClick= ()=>{
-  //   if(user.userName ===  i have){
-  //     return window.alert(`${userName} needs to drink`)
-  //   }
-  // }
+
+  sendChoice = async choice => {
+    const { jwt, match } = this.props;
+    const { name } = match.params;
+    const url = `http://localhost:4000/choice/${name}`;
+
+    const response = await superagent
+
+      .put(url)
+      .send({ iHave: choice })
+      .set({ authorization: `Bearer ${jwt}` });
+    console.log(response, "Ihave true test");
+  };
 
   render() {
     // const { questions } = this.props;
@@ -41,6 +49,7 @@ class Room extends Component {
     }
     const { users } = room;
     const { questions } = room;
+    
 
     console.log("questions test:", questions);
 
@@ -59,7 +68,9 @@ class Room extends Component {
       ) : (
         <p> no users in this room</p>
       );
+    const drink = users.every(user => user.iHave === null);
 
+    console.log("hello", drink);
     // const { questions } = this.props;
     // //console.log("this.props test:", this.props);
     // if (!questions) {
@@ -73,16 +84,23 @@ class Room extends Component {
 
     console.log("room test", room);
     console.log(name, "test");
+console.log(room.questions)
+    const userList = users.map(user => {if(user.iHave === true) { return <p>{user.userName} Has to drink </p>}})
+    //const content = !drink ? "both clicked" : "no body clicked ";
     return (
       <div>
         <h1>{name}</h1>
 
-        <button>I HAVE</button>
-        <button>I HAVE NOT</button>
+        <button onClick={() => this.sendChoice(true)}>I HAVE</button>
+        <button onClick={() => this.sendChoice(false)}>I HAVE NOT</button>
         <button onClick={this.onClick}>JOIN</button>
 
         {list}
-        {listQuestion}
+    {(room.round === null ) && <h1>{room.questions[0].question}</h1>} 
+    {room.round !== null && <h1>{room.questions[room.round].question}</h1>}
+
+    {!drink &&  userList}
+        <button>Next</button>
       </div>
     );
   }
