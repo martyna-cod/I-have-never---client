@@ -44,7 +44,7 @@ class Rooms extends Component {
     //console.log("rooms test:", rooms);
     const list = rooms.map(room => (
       <p key={room.name}>
-        <Link to={`/room/${room.roomName}`} key={room.roomName}>
+        <Link to={`/room/${room.roomName}`} key={room.roomName} style={{color:"black", fontSize:"30px", fontStyle:"bold"}}>
           {room.roomName}
         </Link>
       </p>
@@ -52,7 +52,7 @@ class Rooms extends Component {
     return (
       <main>
         <div>
-          <h1>Rooms</h1>
+          <h1 style={{fontSize:"40px", fontStyle: "bold"}}>Rooms </h1>
           {list}
         </div>
         {/* <div>

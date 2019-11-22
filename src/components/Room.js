@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import superagent from "superagent";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class Room extends Component {
   onClick = async () => {
@@ -23,6 +24,17 @@ class Room extends Component {
 
       .put(url)
       .send({ iHave: choice })
+      .set({ authorization: `Bearer ${jwt}` });
+    console.log(response, "Ihave true test");
+  };
+  nextQuestion = async choice => {
+    const { jwt, match } = this.props;
+    const { name } = match.params;
+    const url = `http://localhost:4000/round/${name}`;
+
+    const response = await superagent
+
+      .put(url)
       .set({ authorization: `Bearer ${jwt}` });
     console.log(response, "Ihave true test");
   };
@@ -49,7 +61,6 @@ class Room extends Component {
     }
     const { users } = room;
     const { questions } = room;
-    
 
     console.log("questions test:", questions);
 
@@ -84,23 +95,34 @@ class Room extends Component {
 
     console.log("room test", room);
     console.log(name, "test");
-console.log(room.questions)
-    const userList = users.map(user => {if(user.iHave === true) { return <p>{user.userName} Has to drink </p>}})
+    console.log(room.questions);
+    const userList = users.map(user => {
+      if (user.iHave === true) {
+        return <p>{user.userName} Has to drink🍺 </p>;
+      }
+    });
     //const content = !drink ? "both clicked" : "no body clicked ";
+    console.log("after userList test");
+    console.log("room.questions test:", room.questions);
+    console.log("room.round test:", room.round);
     return (
       <div>
         <h1>{name}</h1>
-
         <button onClick={() => this.sendChoice(true)}>I HAVE</button>
         <button onClick={() => this.sendChoice(false)}>I HAVE NOT</button>
         <button onClick={this.onClick}>JOIN</button>
-
         {list}
-    {(room.round === null ) && <h1>{room.questions[0].question}</h1>} 
-    {room.round !== null && <h1>{room.questions[room.round].question}</h1>}
-
-    {!drink &&  userList}
-        <button>Next</button>
+        {room.round === null && <h1>{room.questions[0].question}</h1>}
+        {room.round !== null && room.round < 5 && (
+          <h2>{room.questions[room.round].question}</h2>
+        )}
+        {/* {room.round === 5 && (
+          <h1>
+            <Link to="/rooms"></Link>{" "}
+          </h1>
+        )} */}
+        {!drink && userList}
+        <button onClick={() => this.nextQuestion()}>Next</button>
       </div>
     );
   }

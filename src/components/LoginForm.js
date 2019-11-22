@@ -3,7 +3,7 @@ import React from "react";
 export default function LoginForm(props) {
   return (
     <form onSubmit={props.onSubmit}>
-      <label>User Name:</label>
+      <label>user name:</label>
       <input
         type="text"
         name="userName"
@@ -11,7 +11,7 @@ export default function LoginForm(props) {
         value={props.values.userName}
         onChange={props.onChange}
       />
-      <label>Password:</label>
+      <label>password:</label>
       <input
         type="text"
         name="password"
