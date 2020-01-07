@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
-import LoginFormContainer from "./components/LoginFormContainer";
-import SignupFormContainer from "./components/SignupFormContainer";
 import Room from "./components/Room";
 import RoomsList from "./components/RoomsList";
-//import QuestionsForm from "./components/QuestionsForm";
+import Home from "./components/Home"
 import CreateRoomAndQuestions from "./components/CreateRoomAndQuestions";
 
 
@@ -36,8 +34,7 @@ class App extends Component {
         <Route path="/question" component={CreateRoomAndQuestions}/>
         <Route path="/room/:name" component={Room} />
         {/* <Route exact  component={QuestionsForm} /> */}
-        <Route exact path="/" component={LoginFormContainer} />
-        <Route exact path="/" component={SignupFormContainer} />
+        <Route exact path="/" component={Home} />
         {/* <Route
           exact
           path="/"

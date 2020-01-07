@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import superagent from "superagent";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 class Room extends Component {
   onClick = async () => {
