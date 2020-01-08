@@ -8,7 +8,7 @@ class LoginFormContainer extends Component {
 
   componentDidUpdate() {
     if (this.props.user.length !== 0) {
-      this.props.history.push("/rooms"); //  => try to understand...
+      this.props.history.push("/rooms");
     }
   }
   onChange = event => {

@@ -3,13 +3,11 @@ import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 import Room from "./components/Room";
 import RoomsList from "./components/RoomsList";
-import Home from "./components/Home"
+import HomePage from "./components/HomePage"
+import SignupFormContainer from "./components/SignupFormContainer"
+import LoginFormContainer from "./components/LoginFormContainer"
 import CreateRoomAndQuestions from "./components/CreateRoomAndQuestions";
-
-
-// import { login } from "./actions/user";
-// import QuestionsForm from "./components/QuestionsForm";
-// import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   stream = new EventSource("http://localhost:4000/stream");
@@ -18,11 +16,8 @@ class App extends Component {
   };
   componentDidMount() {
     this.stream.onmessage = event => {
-      console.log(event);
-      const { data } = event; // const data = event.data
-
+      const { data } = event;
       const parsed = JSON.parse(data);
-      console.log("parsed tested", parsed);
       this.props.dispatch(parsed);
     };
   }
@@ -33,32 +28,15 @@ class App extends Component {
         <Route exact path="/rooms" component={RoomsList} />
         <Route path="/question" component={CreateRoomAndQuestions}/>
         <Route path="/room/:name" component={Room} />
-        {/* <Route exact  component={QuestionsForm} /> */}
-        <Route exact path="/" component={Home} />
-        {/* <Route
-          exact
-          path="/"
-          component={() => <Link to={"/rooms"}>Rooms</Link>}
-        /> */}
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/sign-up" component={SignupFormContainer} />
+        <Route exact path="/homepage" component={HomePage} />
+        <Route exact path="/login" component={LoginFormContainer} />
       </Fragment>
     );
   }
 }
 
-// {this.state.rooms.map((room)=> { return <p key={room.id}>{room.roomName}<p/>})}
 
 export default connect()(App);
 
-// {/* if(){
-//   <LoginFormContainer />
-//   <SignupFormContainer />
-// }
-// else{ */}
-// // <Route exact path="/" component={Rooms} />
-// // <Route path="/room/:name" component={Room} />
-// {/* } */}
-
-// this.props.dispatch({
-//   type: "ROOMS",
-//   payload: rooms
-// });

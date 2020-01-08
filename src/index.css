@@ -1,15 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Anton|Archivo+Black|Bangers|Black+Ops+One|Bowlby+One+SC|Bungee+Inline|Cabin+Condensed|Cabin+Sketch|Capriola|Carter+One|Contrail+One|Do+Hyeon|Emilys+Candy|Francois+One|Fredericka+the+Great|Gloria+Hallelujah|Gupter|Long+Cang|Love+Ya+Like+A+Sister|Modak|Monoton|Neucha|Norican|Pangolin|Patua+One|Permanent+Marker|Prosto+One|Rock+Salt|Rye|Sawarabi+Mincho|Schoolbell|Sedgwick+Ave|Shojumaru|Special+Elite|Sriracha|VT323|Viga&display=swap');
 body {
   margin: 0;
-  font-family: 'Indie Flower', cursive;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image:url("https://filesedc.com/uploads/273/img/2019/10/1200/never-have-i-ever-questions-5dad5e5702ee0.jpg");
+  font-family: 'Kalam', cursive;
+  background-image:url("https://cms.qz.com/wp-content/uploads/2019/12/GettyImages-1054765470-e1577683446512.jpg?quality=75&strip=all&w=1600&h=900&crop=1");
   background-size: cover;
   text-align: center;
-  margin-top: 200px;
+  margin-top: 10px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+
+font-family: 'Kalam', cursive;
+
 }
+.login-form {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  height: 100%;
+  }
+.questions {
+  margin-top:  50 px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  height: 100%;
+  }
+.create-room {
+    margin-top: 250px;
+    margin: auto;
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    height: 100%;
+    text-align: center;
+}
+.main-page {
+  font-family: 'Bangers';
+  font-size: 70px;
+  color: black;
+  margin-top: 100px;
+  margin-left: 150px;
+
+}
+.main-page-p {
+  font-family: 'Anton', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+.link {
+  color: white;
+}
+
