@@ -3,8 +3,12 @@
 
 
 
+
+
 ## Preface
 This is a multiplayer online drinking game called "never have I ever". In this game the user can sign up and login and after that create a room to play in. After creating a room the player can fill out 5 questions to play in that room. Other users can join the game. After every answer the players get a response telling which player needs to drink. Then the players can click next question.
+
+
 
 
 
@@ -20,3 +24,5 @@ This is a multiplayer online drinking game called "never have I ever". In this g
 5.React Bootstrap
 
 6.Redux-thunk to dispatch actions for the redux store
+
+7.Streaming 
