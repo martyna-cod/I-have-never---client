@@ -10,8 +10,13 @@ This is a multiplayer online drinking game called "never have I ever". In this g
 
 ## Technologies used for this project
 1.React with create-react-app
+
 2.Redux and react-redux to set up a redux store and dispatch actions
+
 3.React-router and react-router-dom to use routes in react and have dom elements that work with them
+
 4.Superagent to fetch data from the database
+
 5.React Bootstrap
+
 6.Redux-thunk to dispatch actions for the redux store
