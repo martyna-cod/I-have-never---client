@@ -30,9 +30,11 @@ export default function LoginForm(props) {
 			<Form.Group controlId="formBasicCheckbox">
 				<Form.Check style={{fontFamily: "'Anton', sans-serif"}} type="checkbox" label="Check me out" />
 			</Form.Group>
-			<Button style={{fontFamily: "'Anton', sans-serif" }} type="Submit" className="btn-lg btn-dark btn-block">Log in</Button>
-			<Form.Text className="text-center">
-				<Link style={{fontFamily: "'Anton', sans-serif", fontSize: "18px", color: "black" }}to="/sign-up">Sign up</Link> <br />
+			<Button style={{fontFamily: "'Anton', sans-serif", height: "35px", padding: "2.5px" }} type="Submit" className="btn-lg btn-dark btn-block">Log in</Button>
+
+			<Form.Text style={{marginTop: "12px"}} className="text-center">
+				<Link style={{fontFamily: "'Anton', sans-serif", fontSize: "18px", color: "black" }}to="/sign-up">Create your account</Link> <br />
+	
 				<Link
 				style={{fontFamily: "'Anton', sans-serif", fontSize: "18px", color: "black" }} to="/">Forgot password</Link>
 			</Form.Text>

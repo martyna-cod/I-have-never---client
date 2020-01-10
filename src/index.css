@@ -49,11 +49,31 @@ font-family: 'Kalam', cursive;
 
 }
 .main-page-p {
+  text-indent: 50px;
   font-family: 'Anton', sans-serif;
-  font-size: 20px;
+  font-size: 25px;
+  color: black;
+  text-align: "center";
+  justify-content: center;
+  padding: 40px;
+  margin: "auto"
+}
+.rooms-list {
+  font-size: '500px' !important;
+  font-style: 'bold';
+  font-family: "'Anton', sans-serif " !important;
+  text-Align: "center" !important;
   color: black;
 }
-.link {
-  color: white;
+.game-room {
+  justify-content: "center" !important;
+  text-align: "cneter" !important;
+}
+.main-title {
+  font-family: 'Bangers';
+  font-size: 70px;
+  color: black;
+  margin-top: 90px;
+  text-align: center;
 }
 

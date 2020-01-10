@@ -9,11 +9,11 @@ export default class Questions extends Component {
 				 <Form.Label style={{fontFamily: "'Anton', sans-serif ", fontSize: "25px" }}>Enter your questions</Form.Label>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control
+						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
 							size="sm"
 							type="text"
 							name="Quesions"
-							placeholder="1. Question"
+							placeholder="1."
 							value={questionsValues['q1']}
 							onChange={(event) => onChangeQuestion(event, 'q1')}
 						/>
@@ -21,11 +21,11 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control
+						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
 							size="sm"
 							type="text"
 							name="Quesions"
-							placeholder="2. Question"
+							placeholder="2."
 							value={questionsValues['q2']}
 							onChange={(event) => onChangeQuestion(event, 'q2')}
 						/>
@@ -33,10 +33,11 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col>
-						<Form.Control
+						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
 							size="sm"
 							type="text"
 							name="Questions"
+							placeholder="3."
 							value={questionsValues['q3']}
 							onChange={(event) => onChangeQuestion(event, 'q3')}
 						/>
@@ -44,10 +45,11 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control
+						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
 							size="sm"
 							type="text"
 							name="Quesions"
+							placeholder="4."
 							value={questionsValues['q4']}
 							onChange={(event) => onChangeQuestion(event, 'q4')}
 						/>
@@ -55,10 +57,11 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control
+						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
 							size="sm"
 							type="text"
 							name="Quesions"
+							placeholder="5."
 							value={questionsValues['q5']}
 							onChange={(event) => onChangeQuestion(event, 'q5')}
 						/>

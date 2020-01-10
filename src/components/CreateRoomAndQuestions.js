@@ -70,7 +70,7 @@ class CreateRoomAndQuestions extends Component {
 							Create new room
             </Button> 
           
-            <Link style={{fontFamily: "'Anton', sans-serif ", fontSize: "30px", color: "black"}} to="/rooms">Rooms</Link>
+            <Link style={{color: "black", fontFamily: "'Anton', sans-serif ", fontSize: "25px" }} to="/rooms">List of rooms</Link>
 					</Form>
 				</form>
 			</div>

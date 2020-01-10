@@ -30,40 +30,10 @@ export default function SignUpForm(props) {
 			<Form.Group controlId="formBasicCheckbox">
 				<Form.Check style={{fontFamily: "'Anton', sans-serif"}} type="checkbox" label="Check me out" />
 			</Form.Group>
-			<Button style={{fontFamily: "'Anton', sans-serif" }} type="Submit" className="btn-lg btn-dark btn-block">Sign up</Button>
+			<Button style={{fontFamily: "'Anton', sans-serif", height: "35px", padding: "2.5px" }} type="Submit" className="btn-lg btn-dark btn-block">Sign up</Button>
 			<Form.Text className="text-center">
 			</Form.Text>
 		</Form>
 
   )
 }
-
-
-
-
-
-
-
-
-    {/* <form onSubmit={props.onSubmit}>
-      <label>user name:</label>
-      <input
-        type="text"
-        name="userName"
-        placeholder="userName"
-        value={props.values.userName}
-        onChange={props.onChange}
-      />
-      <label>password:</label>
-      <input
-        type="text"
-        name="password"
-        placeholder="password"
-        value={props.values.password}
-        onChange={props.onChange}
-      />
-      <button type="Submit">Sign up</button>
-    </form>
-  );
-}
- */}
