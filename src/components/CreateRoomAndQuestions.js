@@ -20,7 +20,7 @@ class CreateRoomAndQuestions extends Component {
 			q5: ''
 		}
 	};
-	url = 'http://localhost:4000'; 
+	url = 'http://localhost:4001'; 
 
 	onChange = (event) => {
 		const input = event.target.value;
@@ -55,8 +55,8 @@ class CreateRoomAndQuestions extends Component {
 			<div>
 				<form onSubmit={this.onSubmit}>
 					<Form className="create-room">
-						<Form.Label style={{fontFamily: "'Anton', sans-serif ", fontSize: "25px" }}>Create a new room</Form.Label>
-          	<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
+						<Form.Label>Create a new room</Form.Label>
+          	<Form.Control 
 							sm={5}
 							size="sm"
 							type="text"
@@ -66,11 +66,11 @@ class CreateRoomAndQuestions extends Component {
 							onChange={this.onChange}
 						/>
 						<Questions questionsValues={this.state.questions} onChangeQuestion={this.onChangeQuestion} />
-					  <Button style={{fontFamily: "'Anton', sans-serif ", fontSize: "15px", width: "300px", height: "35px", padding: "2px" }} type="Submit" className="btn-lg btn-dark btn-block">
+					  <Button  type="Submit" className="btn-dark">
 							Create new room
             </Button> 
           
-            <Link style={{color: "black", fontFamily: "'Anton', sans-serif ", fontSize: "25px" }} to="/rooms">List of rooms</Link>
+            <Link className="link" to="/rooms">List of rooms</Link>
 					</Form>
 				</form>
 			</div>

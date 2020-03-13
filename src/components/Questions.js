@@ -5,11 +5,12 @@ export default class Questions extends Component {
 	render() {
 		const { questionsValues, onChangeQuestion } = this.props;
 		return (
-			<Form className="questions" onSubmit={this.props.onSubmit}>
-				 <Form.Label style={{fontFamily: "'Anton', sans-serif ", fontSize: "25px" }}>Enter your questions</Form.Label>
+			<div className="questions-page">
+			<Form className="questions-form" onSubmit={this.props.onSubmit}>
+				 <Form.Label >Enter your questions</Form.Label>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
+						<Form.Control 
 							size="sm"
 							type="text"
 							name="Quesions"
@@ -21,7 +22,7 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
+						<Form.Control 
 							size="sm"
 							type="text"
 							name="Quesions"
@@ -33,7 +34,7 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col>
-						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
+						<Form.Control 
 							size="sm"
 							type="text"
 							name="Questions"
@@ -45,7 +46,7 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
+						<Form.Control 
 							size="sm"
 							type="text"
 							name="Quesions"
@@ -57,7 +58,7 @@ export default class Questions extends Component {
 				</Form.Group>
 				<Form.Group as={Row} controlId="formHorizontalEmail">
 					<Col >
-						<Form.Control style={{fontFamily: "'Anton', sans-serif "}}
+						<Form.Control
 							size="sm"
 							type="text"
 							name="Quesions"
@@ -68,6 +69,7 @@ export default class Questions extends Component {
 					</Col>
 				</Form.Group>
 			</Form>
+			</div>
 		);
 	}
 }
