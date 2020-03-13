@@ -1,79 +1,73 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Anton|Archivo+Black|Bangers|Black+Ops+One|Bowlby+One+SC|Bungee+Inline|Cabin+Condensed|Cabin+Sketch|Capriola|Carter+One|Contrail+One|Do+Hyeon|Emilys+Candy|Francois+One|Fredericka+the+Great|Gloria+Hallelujah|Gupter|Long+Cang|Love+Ya+Like+A+Sister|Modak|Monoton|Neucha|Norican|Pangolin|Patua+One|Permanent+Marker|Prosto+One|Rock+Salt|Rye|Sawarabi+Mincho|Schoolbell|Sedgwick+Ave|Shojumaru|Special+Elite|Sriracha|VT323|Viga&display=swap');
-body {
-  margin: 0;
-  font-family: 'Kalam', cursive;
-  background-image:url("https://cms.qz.com/wp-content/uploads/2019/12/GettyImages-1054765470-e1577683446512.jpg?quality=75&strip=all&w=1600&h=900&crop=1");
-  background-size: cover;
-  text-align: center;
-  margin-top: 10px;
+/* @import url('https://fonts.googleapis.com/css?family=Acme|Anton|Archivo+Black|Bangers|Black+Ops+One|Bowlby+One+SC|Bungee+Inline|Cabin+Condensed|Cabin+Sketch|Capriola|Carter+One|Contrail+One|Do+Hyeon|Emilys+Candy|Francois+One|Fredericka+the+Great|Gloria+Hallelujah|Gupter|Long+Cang|Love+Ya+Like+A+Sister|Modak|Monoton|Neucha|Norican|Pangolin|Patua+One|Permanent+Marker|Prosto+One|Rock+Salt|Rye|Sawarabi+Mincho|Schoolbell|Sedgwick+Ave|Shojumaru|Special+Elite|Sriracha|VT323|Viga&display=swap'); */
+* {
+	margin: 0;
+	padding: 0;
 }
-
-code {
-
-font-family: 'Kalam', cursive;
-
+body {
+	font-family: 'Kalam', cursive;
+}
+.home-page {
+	background-size: cover;
+	background-position: top;
+	background-image: linear-gradient(to right bottom, rgba(213, 140, 111, 0.4), rgba(180, 45, 40, 0.4)),
+		url("https://cdn.shopify.com/s/files/1/0059/0056/6597/products/photo-id-1998075002949-group-of-smiling-friends-having-fun-at-the-beach_1200x800.jpg?v=1563888005");
+	height: 100vh;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	font-size: 60px;
+	text-align: center;
+}
+.login-page {
+	position: relative;
+	background-image: linear-gradient(to right bottom, rgba(213, 140, 111), rgba(180, 45, 40));
+	height: 100vh;
 }
 .login-form {
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  height: 100%;
-  }
-.questions {
-  margin-top:  50 px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  height: 100%;
-  }
-.create-room {
-    margin-top: 250px;
-    margin: auto;
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    height: 100%;
-    text-align: center;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	margin: auto;
+	max-width: 330px;
+	padding: 15px;
+	width: 300px;
 }
-.main-page {
-  font-family: 'Bangers';
-  font-size: 70px;
-  color: black;
-  margin-top: 100px;
-  margin-left: 150px;
-
+.btn-dark.btn.btn-primary {
+	padding: 8px;
+	font-size: 25px;
+	background-color: rgba(213, 140, 111);
+	border-color: rgba(213, 140, 111);
+	border-radius: 15px;
+	color: black;
 }
-.main-page-p {
-  text-indent: 50px;
-  font-family: 'Anton', sans-serif;
-  font-size: 25px;
-  color: black;
-  text-align: "center";
-  justify-content: center;
-  padding: 40px;
-  margin: "auto"
+.list-rooms-page {
+	background-image: linear-gradient(to right bottom, rgba(213, 140, 111), rgba(180, 45, 40));
+	height: 100vh;
 }
-.rooms-list {
-  font-size: '500px' !important;
-  font-style: 'bold';
-  font-family: "'Anton', sans-serif " !important;
-  text-Align: "center" !important;
-  color: black;
+.rooms-list-header {
+	text-align: center;
+	padding: 10px;
+	line-height: 1.7;
+	display: block;
 }
-.game-room {
-  justify-content: "center" !important;
-  text-align: "cneter" !important;
-}
-.main-title {
-  font-family: 'Bangers';
-  font-size: 70px;
-  color: black;
-  margin-top: 90px;
+.rooms-list-link{
   text-align: center;
+	padding: 10px;
+  display: block;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+.rooms-list-link:hover{
+  color: black;
+}
+.a.link {
+  color: black;
+  text-decoration: none;
 }
 

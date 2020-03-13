@@ -15,15 +15,14 @@ class SignupFormContainer extends Component {
 		this.props.createUser({
 			userName: this.state.userName,
 			password: this.state.password,
-			history: this.props.history.push("/login") 
+			history: this.props.history.push('/login')
 		});
 	};
 
 	render() {
 		return (
 			<div>
-				<SignUpForm 
-				onChange={this.onChange} onSubmit={this.onSubmit} values={this.state} />
+				<SignUpForm onChange={this.onChange} onSubmit={this.onSubmit} values={this.state} />
 			</div>
 		);
 	}

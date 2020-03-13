@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage"
 import SignupFormContainer from "./components/SignupFormContainer"
 import LoginFormContainer from "./components/LoginFormContainer"
 import CreateRoomAndQuestions from "./components/CreateRoomAndQuestions";
-import 'bootstrap/dist/css/bootstrap.min.css';
+ import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 class App extends Component {
   stream = new EventSource("http://localhost:4000/stream");
