@@ -20,7 +20,7 @@ class CreateRoomAndQuestions extends Component {
 			q5: ''
 		}
 	};
-	url = "https://websportshop.herokuapp.com";
+	url = "https://ever-i-have-never.herokuapp.com/";
 
 	onChange = (event) => {
 		const input = event.target.value;
