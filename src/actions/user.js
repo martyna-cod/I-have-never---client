@@ -1,5 +1,5 @@
 import request from "superagent";
-const baseUrl = '../constants'
+const baseUrl = '../constants';
 
 export const JWT = "JWT";
 
@@ -20,7 +20,7 @@ export const login = (userName, password) => dispatch => {
     });
 };
 
-export const createUser = data => (dispatch, getState) => {   //what's going on on this line???????
+export const createUser = data => (dispatch, getState) => {  
 
   request
     .post(`${baseUrl}/user`)

@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import superagent from 'superagent';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
+const baseUrl = '../constants';
 
 class Room extends Component {
 	onClick = async () => {
 		const { jwt, match } = this.props;
 		const { name } = match.params;
-		const url = `http://localhost:4000/join/${name}`;
+		const url = `${baseUrl}/join/${name}`;
 
 		const response = await superagent.put(url).set({ authorization: `Bearer ${jwt}` });
 		console.log(response, 'response test');
@@ -16,7 +17,7 @@ class Room extends Component {
 	sendChoice = async (choice) => {
 		const { jwt, match } = this.props;
 		const { name } = match.params;
-		const url = `http://localhost:4000/choice/${name}`;
+		const url = `${baseUrl}/choice/${name}`;
 
 		const response = await superagent.put(url).send({ iHave: choice }).set({ authorization: `Bearer ${jwt}` });
 		console.log(response, 'Ihave true test');
@@ -24,7 +25,7 @@ class Room extends Component {
 	nextQuestion = async (choice) => {
 		const { jwt, match } = this.props;
 		const { name } = match.params;
-		const url = `http://localhost:4000/round/${name}`;
+		const url = `${baseUrl}/round/${name}`;
 
 		const response = await superagent.put(url).set({ authorization: `Bearer ${jwt}` });
 	};
@@ -57,94 +58,60 @@ class Room extends Component {
 
 		const userList = users.map((user) => {
 			if (user.iHave === true) {
-				return <div style={{marginTop: "110px"}}><p style={{fontSize: "30px"}}> {user.userName} Has to drink🍺 </p> </div> 
+				return <div className="has-to-drink"> <p>{user.userName} Has to drink🍺 </p> </div> 
 			}
 		});
 
 		return (
-			<div>
-
-
-				<div style={{paddingTop: "25px"}}> <h3 style={{fontFamily: "'Anton', sans-serif", fontSize: "25px"}}>Players</h3>
-				<h2 style={{fontFamily: "'Anton', sans-serif", fontSize: "20px"}}> {list}</h2>
+			<div className="game-room"> 
+				<div className="game-room-players">
+				<h2>Players</h2>
+				<h5> {list}</h5>
 				 </div>
-				<div>
-					<h1 style={{ textAlign: 'center', marginTop: '70px' }}>{name}</h1>
+				 <div className="room-name-and-button">
+				<div className="game-room-active-room">
+					Room: {name}. Join the room if you want to play
 				</div>
-				<div>
+				<div className="join-room-button"> 
 					<Button
-						style={{
-							fontFamily: "'Anton', sans-serif",
-							height: '35px',
-							padding: "1.5px",
-							width: '200px',
-							margin: 'auto',
-						}}
+						
 						type="Submit"
-						className="btn-lg btn-dark btn-block"
-						onClick={this.onClick}
+						className="btn-dark btn-join btn-block"
+						onClick={this.onClick} 
 					>
 						Join the room
 					</Button>
 				</div>
-				<div
+				</div>
+				<div className="game-room-question"
 				
 				>
 					{room.round === null && <h1>{room.questions[0].question}</h1>}
-					{room.round !== null && room.round < 5 && <h2 style={{
-						
-						fontFamily: "'Anton', sans-serif",
-						fontSize: "35px",
-						textAlign: 'center',
-						marginTop: "35px"
-						
-					}}>{room.questions[room.round].question}</h2>}
+					{room.round !== null && room.round < 5 && <h2>{room.questions[room.round].question}</h2>}
 				</div>	
 				
-				<div style={{marginLeft: "260px", textAlign: "center", marginTop: "20px", padding: "20px", float: "left",  width: "auto"}}>																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
+				<div className="game-room-buttons">																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
 					<Button
-						style={{
-							fontFamily: "'Anton', sans-serif",
-							height: '35px',
-							padding: "1.5px",
-							width: '200px',
-							margin: 'auto',
-						}}
+				
 						type="Submit"
 						className="btn-lg btn-dark btn-block"
 						onClick={() => this.sendChoice(true)}
 					>
 						I HAVE
 					</Button>
-				</div>
-				<div style={{marginTop: "20px", padding: "20px", float: "left",  width: "auto"}}>
+				
+			
 					<Button
-						style={{
-							fontFamily: "'Anton', sans-serif",
-							height: '35px',
-							padding: "1.5px",
-							width: '200px',
-							margin: 'auto',
-						}}
 						type="Submit"
 						className="btn-lg btn-dark btn-block"
 						onClick={() => this.sendChoice(false)}
 					>
 						I HAVE NOT
 					</Button>
-				</div>
-				<div style={{marginTop: "20px", padding: "20px", float: "left",  width: "auto"}}>
+				
+			
 					{!drink && userList}
 					<Button
-						style={{
-							fontFamily: "'Anton', sans-serif",
-							height: '35px',
-							padding: "1.5px",
-							width: '200px',
-							margin: 'auto',
-							
-						
-						}}
 						type="Submit"
 						className="btn-lg btn-dark btn-block"
 						onClick={() => this.nextQuestion()}
@@ -152,6 +119,7 @@ class Room extends Component {
 						Next
 					</Button>
 					</div>
+					
 			
 			</div>
 		);

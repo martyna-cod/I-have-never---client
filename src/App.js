@@ -10,7 +10,7 @@ import CreateRoomAndQuestions from "./components/CreateRoomAndQuestions";
  import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 class App extends Component {
-  stream = new EventSource("http://localhost:4000/stream");
+  stream = new EventSource("http://localhost:4001/stream");
   state = {
     rooms: []
   };

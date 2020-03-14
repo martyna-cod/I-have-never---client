@@ -8,7 +8,7 @@ export default class Questions extends Component {
 			<div className="questions-page">
 			<Form className="questions-form" onSubmit={this.props.onSubmit}>
 				 <Form.Label >Enter your questions</Form.Label>
-				<Form.Group as={Row} controlId="formHorizontalEmail">
+				<Form.Group controlId="formHorizontalEmail">
 					<Col >
 						<Form.Control 
 							size="sm"
@@ -20,7 +20,7 @@ export default class Questions extends Component {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group as={Row} controlId="formHorizontalEmail">
+				<Form.Group controlId="formHorizontalEmail">
 					<Col >
 						<Form.Control 
 							size="sm"
@@ -32,7 +32,7 @@ export default class Questions extends Component {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group as={Row} controlId="formHorizontalEmail">
+				<Form.Group  controlId="formHorizontalEmail">
 					<Col>
 						<Form.Control 
 							size="sm"
@@ -44,7 +44,7 @@ export default class Questions extends Component {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group as={Row} controlId="formHorizontalEmail">
+				<Form.Group  controlId="formHorizontalEmail">
 					<Col >
 						<Form.Control 
 							size="sm"
@@ -56,7 +56,7 @@ export default class Questions extends Component {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group as={Row} controlId="formHorizontalEmail">
+				<Form.Group  controlId="formHorizontalEmail">
 					<Col >
 						<Form.Control
 							size="sm"

@@ -19,17 +19,22 @@ class Rooms extends Component {
 			</div>
 		));
 		return (
-			<div className="list-rooms-page">
-				<div className="rooms-list-header">
-					<h1>Rooms </h1>
-				</div>
-				<div className="rooms-list-link" >
-					<Link className="link" to="/question">Create new room and play with your friends!</Link>
+			<div className="rooms-list-page">
+				<div className="main-title-rooms-list">Choose an existing room or create new one</div>
+
+
+				<div className="row">
+				<div class="col-1-of-2">
+					<h1 className="sub-title-rooms-list">Active rooms </h1>
+					<h3 className="rooms-list">{list}</h3>
 				</div>
 
-				<div className="rooms-list">
-					<h3>{list}</h3>
+				<div class="col-1-of-2">
+					<Link className="link" to="/question">
+						Create new room and play with your friends!
+					</Link>
 				</div>
+			</div>
 			</div>
 		);
 	}

@@ -20,11 +20,11 @@ class CreateRoomAndQuestions extends Component {
 			q5: ''
 		}
 	};
-	url = 'http://localhost:4001'; 
+	url = "https://websportshop.herokuapp.com";
 
 	onChange = (event) => {
 		const input = event.target.value;
-    this.setState({ roomName: input });
+		this.setState({ roomName: input });
 	};
 
 	onChangeQuestion(event, name) {
@@ -38,39 +38,47 @@ class CreateRoomAndQuestions extends Component {
 	onSubmit = (event) => {
 		event.preventDefault();
 		const { roomName, questions } = this.state;
-    this.props.history.push("/rooms")
+		this.props.history.push('/rooms');
 		const postUrl = `${this.url}/room`;
 		superagent
 			.post(postUrl)
 			.set({ authorization: `Bearer ${this.props.jwt}` })
 			.send({ roomName, questions })
-			.then((res) => {
-      });
-     
-      console.log(this.props.history)
+			.then((res) => {});
+
+		console.log(this.props.history);
 	};
 
 	render() {
 		return (
-			<div>
+			<div className="create-room-questions">
+				<Questions questionsValues={this.state.questions} onChangeQuestion={this.onChangeQuestion} />
 				<form onSubmit={this.onSubmit}>
-					<Form className="create-room">
-						<Form.Label>Create a new room</Form.Label>
-          	<Form.Control 
-							sm={5}
-							size="sm"
-							type="text"
-							name="roomName"
-							placeholder ="Room name"
-							value={this.state.roomName}
-							onChange={this.onChange}
-						/>
-						<Questions questionsValues={this.state.questions} onChangeQuestion={this.onChangeQuestion} />
-					  <Button  type="Submit" className="btn-dark">
-							Create new room
-            </Button> 
-          
-            <Link className="link" to="/rooms">List of rooms</Link>
+					<Form>
+						<div className="rooms-create-input">
+							
+								<Form.Control
+									sm={5}
+									size="sm"
+									type="text"
+									name="roomName"
+									placeholder="Enter room name"
+									value={this.state.roomName}
+									onChange={this.onChange}
+								/>
+						
+						</div>
+
+						<div className="create-room-submit">
+							<Button type="Submit" className="btn-dark">
+								Create a room
+							</Button>
+						</div>
+						<div className="bla">
+							<Link className="link" to="/rooms">
+								Go back to the rooms list
+							</Link>
+						</div>
 					</Form>
 				</form>
 			</div>
