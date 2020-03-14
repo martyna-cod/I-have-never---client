@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import superagent from 'superagent';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
-const baseUrl = '../constants';
+import { baseUrl } from '../constants'
 
 class Room extends Component {
 	onClick = async () => {

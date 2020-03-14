@@ -7,10 +7,11 @@ import HomePage from "./components/HomePage"
 import SignupFormContainer from "./components/SignupFormContainer"
 import LoginFormContainer from "./components/LoginFormContainer"
 import CreateRoomAndQuestions from "./components/CreateRoomAndQuestions";
- import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { baseUrl } from './constants'
 
 class App extends Component {
-  stream = new EventSource("http://localhost:4001/stream");
+  stream = new EventSource(`${baseUrl}/stream`);
   state = {
     rooms: []
   };
