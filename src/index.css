@@ -22,17 +22,20 @@ body {
 	text-align: center;
 }
 .home-page-p {
-	animation: text 1s ease-in-out;	
+	animation: text 3s ease-in-out;	
+	backface-visibility: hidden;
 }
 
 @keyframes text {
 	0% {
-		letter-spacing: 20px;
-	}
+	  opacity: 0;
+	  transform: translateX(-100px); }
+	80% {
+	  transform: translateX(-10px); }
 	100% {
-		letter-spacing: 1px;
-	}
-}
+	  opacity: 1;
+	  transform: translate(0); } }
+  
 .login-page {
 	position: relative;
 	background-image: linear-gradient(to right bottom, rgba(213, 140, 111), rgba(180, 45, 40));
@@ -181,7 +184,7 @@ body {
 	transform: translate(-50%, -50%);
 }
 .game-room {
-	background-image: linear-gradient(to right bottom, rgba(213, 140, 111, 0.5), rgba(180, 45, 40, 0.5)),
+	background-image: linear-gradient(to right bottom, rgba(213, 140, 111, 0.3), rgba(180, 45, 40, 0.3)),
 	url("https://cdn.shopify.com/s/files/1/0059/0056/6597/products/photo-id-1998075002949-group-of-smiling-friends-having-fun-at-the-beach_1200x800.jpg?v=1563888005");
 background-size: cover;
 background-position: top;

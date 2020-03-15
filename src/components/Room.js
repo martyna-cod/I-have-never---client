@@ -5,6 +5,8 @@ import { Button } from 'react-bootstrap';
 import { baseUrl } from '../constants'
 
 class Room extends Component {
+
+
 	onClick = async () => {
 		const { jwt, match } = this.props;
 		const { name } = match.params;
@@ -28,6 +30,7 @@ class Room extends Component {
 		const url = `${baseUrl}/round/${name}`;
 
 		const response = await superagent.put(url).set({ authorization: `Bearer ${jwt}` });
+	
 	};
 
 	render() {
@@ -58,7 +61,8 @@ class Room extends Component {
 
 		const userList = users.map((user) => {
 			if (user.iHave === true) {
-				return <div className="has-to-drink"> <p>{user.userName} Has to drink🍺 </p> </div> 
+				return <div className="has-to-drink"> <p>{user.userName} Has to drink🍺 </p> </div>  
+		
 			}
 		});
 
